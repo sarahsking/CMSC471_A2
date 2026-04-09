@@ -1,0 +1,51 @@
+city,status,tract_count,race_group,avg_pct_change,direction,abs_magnitude
+Atlanta,Gentrified,23,Black,-23.56969565,decline,23.56969565
+Atlanta,Gentrified,23,White,18.93826087,increase,18.93826087
+Atlanta,Gentrified,23,Asian,2.103608696,increase,2.103608696
+Atlanta,Gentrified,23,Hispanic,0.5000869565,increase,0.5000869565
+Atlanta,Gentrified,23,Native,0.04243478261,increase,0.04243478261
+Atlanta,"Eligible, not gentrified",49,Black,-2.325285714,decline,2.325285714
+Atlanta,"Eligible, not gentrified",49,White,1.788612245,increase,1.788612245
+Atlanta,"Eligible, not gentrified",49,Asian,-0.6211632653,decline,0.6211632653
+Atlanta,"Eligible, not gentrified",49,Hispanic,0.09016326531,increase,0.09016326531
+Atlanta,"Eligible, not gentrified",49,Native,-0.02710204082,decline,0.02710204082
+Baltimore,Gentrified,40,Black,-7.95105,decline,7.95105
+Baltimore,Gentrified,40,White,1.0342,increase,1.0342
+Baltimore,Gentrified,40,Asian,1.38065,increase,1.38065
+Baltimore,Gentrified,40,Hispanic,4.122225,increase,4.122225
+Baltimore,Gentrified,40,Native,-0.55155,decline,0.55155
+Baltimore,"Eligible, not gentrified",129,Black,0.570620155,increase,0.570620155
+Baltimore,"Eligible, not gentrified",129,White,-5.372875969,decline,5.372875969
+Baltimore,"Eligible, not gentrified",129,Asian,0.2070930233,increase,0.2070930233
+Baltimore,"Eligible, not gentrified",129,Hispanic,3.084542636,increase,3.084542636
+Baltimore,"Eligible, not gentrified",129,Native,-0.02884496124,decline,0.02884496124
+New York City,Gentrified,138,Black,-7.550268116,decline,7.550268116
+New York City,Gentrified,138,White,8.114217391,increase,8.114217391
+New York City,Gentrified,138,Asian,2.031753623,increase,2.031753623
+New York City,Gentrified,138,Hispanic,-3.489195652,decline,3.489195652
+New York City,Gentrified,138,Native,0.09991304348,increase,0.09991304348
+New York City,"Eligible, not gentrified",317,Black,-5.020993691,decline,5.020993691
+New York City,"Eligible, not gentrified",317,White,-1.517201893,decline,1.517201893
+New York City,"Eligible, not gentrified",317,Asian,2.07570347,increase,2.07570347
+New York City,"Eligible, not gentrified",317,Hispanic,3.103208202,increase,3.103208202
+New York City,"Eligible, not gentrified",317,Native,0.07037539432,increase,0.07037539432
+Oakland,Gentrified,29,Black,-19.88262069,decline,19.88262069
+Oakland,Gentrified,29,White,13.69672414,increase,13.69672414
+Oakland,Gentrified,29,Asian,-0.6418275862,decline,0.6418275862
+Oakland,Gentrified,29,Hispanic,1.80637931,increase,1.80637931
+Oakland,Gentrified,29,Native,-0.05610344828,decline,0.05610344828
+Oakland,"Eligible, not gentrified",54,Black,-13.92485185,decline,13.92485185
+Oakland,"Eligible, not gentrified",54,White,2.325092593,increase,2.325092593
+Oakland,"Eligible, not gentrified",54,Asian,-0.7092407407,decline,0.7092407407
+Oakland,"Eligible, not gentrified",54,Hispanic,7.817703704,increase,7.817703704
+Oakland,"Eligible, not gentrified",54,Native,0.4058518519,increase,0.4058518519
+Washington,Gentrified,59,Black,-26.75340678,decline,26.75340678
+Washington,Gentrified,59,White,19.27959322,increase,19.27959322
+Washington,Gentrified,59,Asian,1.677033898,increase,1.677033898
+Washington,Gentrified,59,Hispanic,3.712101695,increase,3.712101695
+Washington,Gentrified,59,Native,0.1273898305,increase,0.1273898305
+Washington,"Eligible, not gentrified",44,Black,-3.872590909,decline,3.872590909
+Washington,"Eligible, not gentrified",44,White,-0.07009090909,decline,0.07009090909
+Washington,"Eligible, not gentrified",44,Asian,-0.1222272727,decline,0.1222272727
+Washington,"Eligible, not gentrified",44,Hispanic,3.003954545,increase,3.003954545
+Washington,"Eligible, not gentrified",44,Native,-0.1525681818,decline,0.1525681818

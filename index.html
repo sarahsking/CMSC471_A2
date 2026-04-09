@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+ 
+ <h1>White Hat Visualization</h1>
+ <br>
+  <h2>Racial demographic shifts in gentrifying neighborhoods across 5 US Cities, 2000 to 2017</h2>
+<p class="note">
+  <span class="note-label"></span>
+  <strong>The dataset: </strong> This data comes from a 
+  <a href="https://github.com/BuzzFeedNews/2020-02-gentrification" target="_blank">BuzzFeed News investigation</a> 
+  published in February 2020, which analyzed how Black residents have been displaced from 
+  neighborhoods in five major US cities. The data pulls from the US Census Bureau's 
+  American Community Survey (2013 - 2017) and a dataset called the Longitudinal Tract Data Base, 
+  which makes Census tract boundaries comparable across decades. 
+</p>
+ 
+<p class="note">
+  The two charts use BuzzFeed's adaptation of Governing Magazine's gentrification methodology. 
+  A tract (which is a small geographic neighborhood unit within the city) is <strong>eligible</strong> if, in 2000, it had at least 500 residents, 
+  a median income in the bottom 40% of its metro area, and a median home value also in the 
+  bottom 40%. A tract is classified as <strong>gentrified</strong> if it was eligible AND by 2017 its 
+  home values had risen into the top third of the metro area AND its share of college-educated 
+  residents had grown into the top third.  
+</p>  
+
+<hr>
+
+  <p class="data-transformation">
+  <strong>How this data was used in this visualization: </strong> The original dataset contains 2,799 census tracts across the five cities. Several transformations were applied to prepare this data for visualization
+  First, the dataset was filtered into two subsets: 
+  <ol>
+    <li>
+      Tracts marked as gentrified (n=289) represent low-income neighborhoods from 2000 that experienced significant rises in home values and educational attainment by 2017.
+    </li>
+    <li>
+      Tracts marked as eligible but not gentrified (n=593) represent neighborhoods that met the same low-income criteria in 2000 but did not experience those changes by 2017.
+    </li>
+  </ol> 
+  
+  Tracts that were never eligible were excluded, since they did not share the same starting economic conditions and would not make a fair comparison.
+  Second, both subsets were averaged from tract level to city level by calculating the average percentage change for each racial group (Black, White, Hispanic, Asian, and Native) within each city. A direction column was also added, indicating whether each change was an increase or decrease. 
+
+  <br> 
+  <br> 
+  Each bar in this graph shows the average percentage change in a racial group's share of the population between 2000 and 2017. For example, 
+  a bar at -20% for Black residents means that on average, Black residents made up 20 percentage 
+  points less of those neighborhoods by 2017 than they did in 2000.
+  <p> Download the transformed dataset 
+  <a href="data/gentrification_transformed_final.csv" target="_blank">
+    here</a>.
+</p>
+
+<p class="note-bias">
+  <strong>Important note about potential bias: </strong> This visualization only shows changes in racial population share, it does 
+  not capture the income, home value, or education shifts that also drive displacement. The "gentrified" vs. "eligible" classification is also based on fixed thresholds, so tracts 
+  near the cutoff could fall either way. For the more information on these factors, please refer to the original article and visit Buzzfeed's Github Repository.
+</p>
+
+<br>
+<hr> 
+<p class="instructions">
+  Select a city from the dropdown to switch between Atlanta, Baltimore, New York City, Oakland, 
+  and Washington DC. Hover over any bar to see the exact percentage change and how many 
+  census tracts are included in that average. Hover over any terms to get definitions and more information.
+</p> 
+
+<br>
+ 
+  <div class="controls">
+    <label for="citySelect">City</label>
+    <select id="citySelect">
+      <option value="Atlanta">Atlanta</option>
+      <option value="Baltimore">Baltimore</option>
+      <option value="New York City">New York City</option>
+      <option value="Oakland">Oakland</option>
+      <option value="Washington">Washington</option>
+    </select>
+    <span id="msa-label" style="font-size: 0.8rem; color: #999; font-style: italic;"></span>
+  </div>
+
+ <div class="charts-div">
+    <div class="chart-labels">
+      <div class="chart-label">Gentrified
+        <span class="extra-info" data-key="gentrified">?</span>
+      </div>
+      <div class="chart-label">Eligible, not gentrified
+        <span class="extra-info" data-key="eligible">?</span>
+      </div>
+    </div> 
+ 
+  <div class="charts-row">
+    <div class="chart-wrap" id="vis-left"></div>
+    <div class="chart-wrap" id="vis-right"></div>
+  </div> 
+
+  </div>
+ 
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-box" style="background:#E24B4A;"></div>
+      Population declined
+    </div>
+    <div class="legend-item">
+      <div class="legend-box" style="background:#378ADD;"></div>
+      Population increased
+    </div>
+  </div>
+ 
+  <div id="tooltip"></div> 
+  <br> 
+
+  <h1>Black Hat Visualization</h1>
+   <br> 
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="js/script.js"></script>
+ 
+</body>
+</html>
+</html>
