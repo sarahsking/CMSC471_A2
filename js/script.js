@@ -208,7 +208,7 @@ const definitions = {
 }
 
 //tooltips for titles
-d3.selectAll('.extra-info')
+d3.selectAll('.chart-title')
     .on('mouseover', function(event) {
         const key = d3.select(this).attr('data-key')
         d3.select('#tooltip')

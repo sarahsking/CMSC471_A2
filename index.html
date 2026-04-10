@@ -17,13 +17,13 @@
   <strong>The dataset: </strong> This data comes from a 
   <a href="https://github.com/BuzzFeedNews/2020-02-gentrification" target="_blank">BuzzFeed News investigation</a> 
   published in February 2020, which analyzed how Black residents have been displaced from 
-  neighborhoods in five major US cities. The data pulls from the US Census Bureau's 
-  American Community Survey (2013 - 2017) and a dataset called the Longitudinal Tract Data Base, 
-  which makes Census tract boundaries comparable across decades. 
+  neighborhoods in five major US cities. This dataset is dervied from the US Census Bureau's 
+  American Community Survey (2013-2017) and a dataset called the Longitudinal Tract Data Base, 
+  to compare Census tracts across decades. 
 </p>
  
 <p class="note">
-  The two charts use BuzzFeed's adaptation of Governing Magazine's gentrification methodology. 
+  The side by side charts use BuzzFeed's adaptation of Governing Magazine's gentrification methodology. 
   A tract (which is a small geographic neighborhood unit within the city) is <strong>eligible</strong> if, in 2000, it had at least 500 residents, 
   a median income in the bottom 40% of its metro area, and a median home value also in the 
   bottom 40%. A tract is classified as <strong>gentrified</strong> if it was eligible AND by 2017 its 
@@ -34,19 +34,19 @@
 <hr>
 
   <p class="data-transformation">
-  <strong>How this data was used in this visualization: </strong> The original dataset contains 2,799 census tracts across the five cities. Several transformations were applied to prepare this data for visualization
+  <strong>How this data was used in this visualization: </strong> The original dataset contains 2,800 census tracts across the five cities. Multiple transformations were applied to prepare this data for visualization.
   First, the dataset was filtered into two subsets: 
   <ol>
     <li>
-      Tracts marked as gentrified (n=289) represent low-income neighborhoods from 2000 that experienced significant rises in home values and educational attainment by 2017.
+      Tracts marked as gentrified (289) represent low-income neighborhoods from 2,800 that experienced significant rises in home values and educational attainment by 2017.
     </li>
     <li>
-      Tracts marked as eligible but not gentrified (n=593) represent neighborhoods that met the same low-income criteria in 2000 but did not experience those changes by 2017.
+      Tracts marked as eligible but not gentrified (593) represent neighborhoods that met the same low-income criteria in 2000 but did not experience those changes by 2017.
     </li>
   </ol> 
   
   Tracts that were never eligible were excluded, since they did not share the same starting economic conditions and would not make a fair comparison.
-  Second, both subsets were averaged from tract level to city level by calculating the average percentage change for each racial group (Black, White, Hispanic, Asian, and Native) within each city. A direction column was also added, indicating whether each change was an increase or decrease. 
+  Second, both subsets were averaged from tract level into city level by calculating the average percentage change for each racial group (Black, White, Hispanic, Asian, and Native) within each city. A direction column was also added, indicating whether each change was an increase or decrease. 
 
   <br> 
   <br> 
@@ -68,8 +68,8 @@
 <hr> 
 <p class="instructions">
   Select a city from the dropdown to switch between Atlanta, Baltimore, New York City, Oakland, 
-  and Washington DC. Hover over any bar to see the exact percentage change and how many 
-  census tracts are included in that average. Hover over any terms to get definitions and more information.
+  and Washington DC. Hover over any bar to see the exact percentage change from 2000 to 2017 and how many 
+  census tracts are included in that average. Hover over the chart titles to get definitions and more information.
 </p> 
 
 <br>
@@ -88,11 +88,9 @@
 
  <div class="charts-div">
     <div class="chart-labels">
-      <div class="chart-label">Gentrified
-        <span class="extra-info" data-key="gentrified">?</span>
+      <div class="chart-title" data-key="gentrified">Gentrified
       </div>
-      <div class="chart-label">Eligible, not gentrified
-        <span class="extra-info" data-key="eligible">?</span>
+      <div class="chart-title" data-key="eligible">Eligible, not gentrified
       </div>
     </div> 
  
@@ -101,17 +99,6 @@
     <div class="chart-wrap" id="vis-right"></div>
   </div> 
 
-  </div>
- 
-  <div class="legend">
-    <div class="legend-item">
-      <div class="legend-box" style="background:#E24B4A;"></div>
-      Population declined
-    </div>
-    <div class="legend-item">
-      <div class="legend-box" style="background:#378ADD;"></div>
-      Population increased
-    </div>
   </div>
  
   <div id="tooltip"></div> 
@@ -128,35 +115,45 @@
    <img src="data/blackhat.jpeg" alt="blackhat"  width="1000">
 
 
+   <hr> 
+   <br>
+    <h1> Write Up: </h1>
        <p id="explanation">
-    Write Up:  For our project, we looked at the Gentrification and demographic analysis, 2000 to 2017 dataset by Buzzfeed.
+    For our project, we looked at the Gentrification and demographic analysis, 2000 to 2017 dataset by Buzzfeed.
+</p>
+    <p id="explanation">
+<strong>White Hat Visualization (Racial demographic shifts in gentrifying neighborhoods across 5 US Cities, 2000 to 2017):</strong>  This visualization explores how population share changed across racial groups between 2000 and 2017, specifically within low income neighborhoods that did versus did not undergo gentrification. We decided to create two charts side by side so it would be easier to compare, one for gentrified tracts and the other for eligible but not gentrified tracts from the same cities. We decided on this because both groups started from the same low income baseline in 2000, any differences in demographic change between them can be more directly attributed to the gentrification process itself, rather than pre-existing neighborhood conditions. 
 
-White Hat Visualization:  This visualization explores how population share changed across racial groups between 2000 and 2017, specifically within low-income neighborhoods that did and did not undergo gentrification. We decided to create two charts side by side so it would be easier to compare, one for gentrified tracts and the other for eligible but not gentrified tracts from the same cities. We decided on this because both groups started from the same low-income baseline in 2000, any differences in demographic change between them can be more directly attributed to the gentrification process itself, rather than pre-existing neighborhood conditions.The visualization reveals that gentrified tracts show significantly larger demographic shifts than the eligible but not gentrified tracts, with Black populations experiencing the greatest declines in cities like Washington D.C. and Atlanta, while White populations saw the largest increases in those same cities.
+Before we started, we applied many data transformations and filters. The original dataset has 2,800 census tracts across five cities (Atlanta, Baltimore, New York City, Oakland, and Washington D.C.). We first separated the full dataset into two groups, gentrified tracts and eligible but not gentrified tracts, and filtered out tracts that never qualified for gentrification since they started from different economic conditions. We used AI to figure out the specific commands to use on Google Sheets to create separate pivot tables, but we created all of the data transformations ourselves. We then averaged and combined all the data from the different tracts into their specific cities averages, calculating the average percentage change in population share for each of the five racial groups across each city. We also added a direction column to show if the population increases and decreases. 
+One of the biggest aspects of White Hat visualizations are clear communication and transparency, so we focused on including a lot of background information about the data and its sources, as well as exactly how we transformed it, which parts of the data we used and didn't use, and potential biases because of this and from the dataset in general. We made sure to cite the data source from Buzzfeed, as well as the specific methods and definitions they used to derive the data. A key limitation/bias we found was that gentrification was defined using a specific set of thresholds, so different definitions of gentrification would produce different results. We also tried to be clear about what this visualization doesn’t show. For example, it only shows changes in racial population share and doesn’t compare income, home value, or education shifts. All of these notes were in the paragraphs before the visualization, so viewers are not led to make conclusions beyond what the data actually shows. In the end, we direct the viewers back to the main dataset if they would like more information. We also included a short instruction section that also tells users they can hover over items to see more information.
+In terms of design choices for the visualizations themselves, the titles (Gentrified and Eligible, but not gentrified) have definitions in their tooltips. Each bar also has tooltips that indicate the specific percentage, the numbers of tracts that this data was averaged from, as well as the racial group it represents. Red bars indicate a population decrease and blue bars indicate a population increase, allowing viewers to quickly identify which racial groups gained or lost population. The city dropdown menu allows users to explore each of the five cities individually, allowing for specific comparisons. Next to the dropdown, we included which specific cities/areas were included in the census data for this city, which adds to the transparency aspect. Both charts use the same y-axis scale, ranging from -30% to +20%, so viewers can easily compare the magnitude of changes between the sections without being misled by different axis ranges. We tried to keep the overall title of the visualization as informative and unbiased as possible.
+</p>
 
-Before we started, we applied many data transformations and filters. The original dataset has around 2,800 census tracts across five cities (Atlanta, Baltimore, New York City, Oakland, and Washington D.C.). We first separated the full dataset into two groups, gentrified tracts and eligible but not gentrified tracts, and filtered out tracts that never qualified for gentrification since they started from different economic conditions. We used AI to figure out the specific commands to use on Google Sheets to create pivot tables, but we created all of the data transformations ourselves. We then averaged and combined all the data from the different tracts into their specific cities averages, calculating the mean percentage change in population share for each of the five racial groups across each city. We also added a direction column to show if the population increases and decreases. 
-
-One of the biggest aspects of White Hat visualizations are clear communication and transparency, so we focused on including a lot of background information about the data and its source, as well as exactly how we transformed it, and potential biases because of this and from the dataset in general. We made sure to cite the data source from Buzzfeed, as well as the specific methods and definitions they used to derive the data. A key limitation/bias we found was that gentrification was defined using a specific set of thresholds, so different definitions of gentrification would produce different results. We also tried to be clear about what this visualization doesn’t show. For example, it only shows changes in racial population share and doesn’t reflect income, home value, or education shifts. All of these notes were in the paragraphs before the visualization, so viewers are not led to make conclusions beyond what the data actually shows. We also included a short instruction section that also tells users they can hover over items to see more information.
-
-In the charts themselves, the titles (Gentrified and Eligible, but not gentrified) have definitions in their tooltips. Each bar also has tooltips that indicate the specific percentage, the numbers of tracts that this data was averaged from, as well as the racial group it represents. Red bars indicate a population decrease and blue bars indicate a population increase, allowing viewers to quickly identify which racial groups gained or lost population. The city dropdown menu allows users to explore each of the five cities individually, allowing for specific comparisons. Next to the dropdown, we included which specific cities/areas were included in the census data for this city, which adds to the transparency aspect. Both charts use the same y-axis scale, ranging from -30% to +20%, so viewers can easily compare the magnitude of changes between the sections without being misled by different axis ranges. This is an important White Nat decision because using different scales on side by side charts is a common way to distort comparisons. 
-
-
-Black Hat Visualization:  
+ <p id="explanation">
+<strong>Black Hat Visualization (Diversity is Increasing in Washington, D.C.):  </strong> 
 The dataset used for the Black Hat visualization was the same identification dataset used for the White Hat visualization, focusing on the data for Washington, DC. The data was manipulated, transformed, and displayed in order to make it seem like diversity was increasing, while ignoring the real issue of the black population being pushed out of the city center, and overall, as discussed in the original Buzzfeed article, where the data came from. The first manipulative technique used was the title of the visualization, which was “Diversity is Increasing in Washington, DC,” with the subtitle “The racial percentage of several groups have increased from 2000 to 2017.” The title and subtitle combined make it seem like everything happening in DC is good, as diversity often has a positive connotation, while ignoring the systematic harm falling on the black population in DC. The visualization compares the percentage of different races from 2000 to 2017. When displaying this change, Canva was used in order to be able to manually manipulate the visual amount of change to seem more or less than it actually is. The scale used for White, Asian, and Hispanic communities makes it seem like they are all increasing at similar rates, when in fact the White population has a significantly higher percentage of change. Additionally, the scale is able to minimize how the Black population percentage has decreased. The axis also reflects this manipulation as it changes wildly for each race, providing inconsistent standards that can go unnoticed unless looked at carefully. Additionally, there are other races that experienced a slight decrease in percentage, such as Native and Native Pacific Islanders. While not as significant as the change in the Black population, these populations still matter, and by leaving them out in order to convey diversity, this manipulates the viewers into forcefully ignoring them. The source is also included on the bottom right corner in order to falsely convey reliability.
+</p>
 
-References:
-https://www.buzzfeednews.com/article/lamvo/gentrification-maps-white-black-people-neighborhoods 
-
-Development Process: 
+<p id="explanation">
+<strong>Development Process: </strong>
 
 To begin, both Srinidhi Arumugam and Sarah King spent 1-2 hours deciding on a dataset and planning what aspects of the data they wanted to highlight.
+<br>
+<br>
+Srinidhi developed the White Hat visualization on D3.js and write-up. Srinidhi spent around 6-7 hours on all her components. The aspects that took the longest for her were deciding how to filter and transform the data in a way that did not take away from the original dataset's meaning, and creating the paragraphs and instructions for the visualization, in order to keep it as transparent as possible and include any potential biases. Another tricky part initially was figuring out how to create two side by side visualizations. She also tried several different chart types before landing on two diverging bar charts, including a rose diagram, a bubble chart, and a pie chart. Each of these had limitations in clearly showing whether a change was positive or negative. The diverging bar chart was eventually chosen because it was the clearest way to show both the size and direction of each population change at the same time. After trying to build several circular chart types in Tableau and running into different limitations, Srinidhi switched to D3.js which allowed for more control over the design and interactivity, like the dropdown between the cities and tooltips.
+<br>
+<br>
+Sarah developed the Black Hat visualization, wrote the Black Hat write-up, and recorded the demo video. Sarah spent around 4-5 hours on all her components. The aspects that took the most time for her were coming up with the idea for the black hat visualization and then creating it on Canva. When creating the Black Hat visualization, she was inspired by the “By The Numbers” example in the “Black Hat Visualization” paper and the examples of a truncated Y-axis in the “How to Lie with Data Visualization” article, which both showed how manipulating the scale can have large effects on the overall display of data.
+</p>
+<p id="explanation">
+<strong>References:</strong>
 
-Sarah developed the Black Hat visualization, wrote the Black Hat write-up, and recorded the demo video. Sarah spent around 3-4 hours on all components. The aspects that took the most time for her were coming up with the idea for the black hat visualization and then creating it on Canva. When creating the Black Hat visualization, she was inspired by the “By The Numbers” example in the “Black Hat Visualization” paper and the examples of a truncated Y-axis in the “How to Lie with Data Visualization” article, which both showed how manipulating the scale can have large effects on the overall display of data.
-
-Srinidhi developed the White Hat visualization on D3.js and write-up. Srinidhi spent around 6 hours on all components. The aspects that took the longest for her were figuring out how to filter and transform the data, and creating the paragraphs and instructions for the visualization, in order to keep it as transparent as possible and include any potential biases. She also tried several different chart types before landing on the final diverging bar chart, including a rose diagram, a packed bubble chart, and a donut chart. Each of these had limitations in clearly showing whether a change was positive or negative. The diverging bar chart was chosen because it was the clearest way to show both the size and direction of each demographic change at the same time. After trying to build several circular chart types in Tableau and running into different limitations, Srinidhi switched to D3.js which allowed for more precise control over the design and interactivity, like the dropdown between the cities and tooltips.
-
-References:
-https://www.heap.io/blog/how-to-lie-with-data-visualization
-https://idl.cs.washington.edu/files/2017-BlackHatVis-DECISIVe.pdf 
+<ul>
+  <li><a href="https://www.buzzfeednews.com/article/lamvo/gentrification-maps-white-black-people-neighborhoods">https://www.buzzfeednews.com/article/lamvo/gentrification-maps-white-black-people-neighborhoods</a></li>
+  <li><a href="https://www.heap.io/blog/how-to-lie-with-data-visualization">https://www.heap.io/blog/how-to-lie-with-data-visualization</a></li>
+  <li><a href="https://idl.cs.washington.edu/files/2017-BlackHatVis-DECISIVe.pdf">https://idl.cs.washington.edu/files/2017-BlackHatVis-DECISIVe.pdf</a></li>
+    <li><a href="https://github.com/BuzzFeedNews/2020-02-gentrification">https://github.com/BuzzFeedNews/2020-02-gentrification</a></li>
+</ul>
 </p>
 
   <script src="https://d3js.org/d3.v7.min.js"></script>

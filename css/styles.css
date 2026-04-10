@@ -47,12 +47,13 @@
       margin-bottom: 0.5rem;
 
     }
-    .chart-label {
+    .chart-title {
       flex: 1;
       text-align: center;
-      font-size: 0.85rem;
+      font-size: 1rem;
       font-weight: bold;
       color: #555;
+      text-decoration: underline;
     }
  
     .charts-row { 
@@ -62,32 +63,12 @@
 
     .chart-wrap {
       flex: 1;
-      background: #fff;
-      border: 1px solid #e8e8e8;
-      border-radius: 10px;
+      border: 2px solid #e8e8e8;
       padding: 0.5rem;
     }
- 
+  
     .charts-div {
         margin-top: 2rem;
-    }
-
-    .legend { 
-        display: flex; 
-        gap: 1.5rem; 
-        margin-top: 1rem; 
-        font-size: 0.8rem; 
-        color: #666; 
-    }
-    .legend-item { 
-        display: flex;
-        align-items: center; 
-        gap: 6px; 
-    }
-    .legend-box { 
-        width: 12px; 
-        height: 12px; 
-        border-radius: 3px; 
     }
  
     #tooltip {
@@ -115,7 +96,7 @@
         font-weight: normal;
     } 
 
-    .extra-info {
+    /* .chart-title {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -130,4 +111,4 @@
         cursor: pointer;
         margin-left: 5px;
         position: relative;
-    }
+    } */
